@@ -53,7 +53,6 @@ int mru(){
 			break;
 		}
 	}
-	getch();
 }
 
 int mruv(){
@@ -123,7 +122,6 @@ int mruv(){
 			break;
 		}
 	}
-	getch();
 }
 
 int tiroVertical(){
@@ -172,34 +170,52 @@ int tiroVertical(){
 			break;
 		}
 	}
-	getch();
+}
+
+int salirEcuacion(){
+	bool r = false;
+	cout << "¿Quieres realizar otra ecuación?" << endl << "Y. Sí, realizar otra ecuación / N. No, salir ";
+	return r;
 }
 int main(int argc, char *argv[]) {
 	
 	char op = '0';
-	cout << "### FísiQ ###" << endl;
-	cout << "¿Qué movimiento desea calcular?" << endl << endl;
-	cout << "1. MRU" << endl << "2. MRUV" << endl << "3. Tiro Vertical" << endl << "4. Caida Libre" << endl;
-	op = getch();
-	switch (op){
-	case '1':
-		mru();
-		break;
-	case '2':
-		mruv();
-		break;
-	case '3':
-		tiroVertical();
-		break;
-	case '4':
-		break;
-	default:
-		cout << "¿Seguro quieres salir?" << endl << "Presiona cualquier tecla para salir / 'N' para volver al menú";
-		op = getch();
-		if (op == 'N'){
+	bool salir = true;
+	
+	while(salir == true)
+	{
+		system("cls");
 		
+		cout << "### FísiQ ###" << endl;
+		cout << "¿Qué movimiento desea calcular?" << endl << endl;
+		cout << "1. MRU" << endl << "2. MRUV" << endl << "3. Tiro Vertical" << endl << "4. Caida Libre" << endl;
+		cout << endl << "¿Seguro quieres salir?";
+		op = getch();
+		switch (op){
+		case '1':
+			mru();
+			getch();
+			break;
+		case '2':
+			mruv();
+			getch();
+			break;
+		case '3':
+			tiroVertical();
+			getch();
+			break;
+		case '4':
+			break;
+		default:
+			cout << endl << "Presiona cualquier tecla para salir / 'N' para volver al menú";
+			op = getch();
+			
+			if (op == 'Y'){
+				salir = true;
+			}else{
+				salir = false;
+			}
 		}
 	}
-
 	return 0;
 }
