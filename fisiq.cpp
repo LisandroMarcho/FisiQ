@@ -71,7 +71,7 @@ int mruv(){
 	
 	system("cls");
 	cout << "Selecciona la ecuación:" << endl;
-	cout << "1. X = Xo + Vo * t + 1/2 * a * t" << endl << "2. vf = vo + a * t" << endl << "3. a = (vf - vo) / (tf - to)" << endl;
+	cout << "1. X = Xo + Vo * t + 1/2 * a * t^2 " << endl << "2. vf = vo + a * t" << endl << "3. a = (vf - vo) / (tf - to)" << endl;
 	char opE = getch();
 	system("cls");
 	switch (opE){
@@ -180,28 +180,31 @@ int caidaLibre(){
 	string unidadt = ".";
 	
 	float t = 0;
-	float g = -9.8;
+	float g = 9.8;
 	
 	system("cls");
 	cout << "Selecciona la ecuacion:" << endl;
-	cout << "1. X = g * t" << endl << "2. X= 1/2 * g * (t^2)  " << endl;
+	cout << "1. VF = g * t" << endl << "2. H = 1/2 * g * t^2 " << endl;
 	char opE = getch();
 	system("cls");
-	switch (opE){
-		case '1':
-		{	cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
-			cout << "t = "; cin >> t; cout << endl;
-			cout << "X = "<< g << " * "<<t<< endl;
-			cout << "X = "<<(g*t)<<endl;
-			break;
-		}
-	case '2':
-		{	cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
-			cout << "t = "; cin >> t; cout << endl;
-			cout << "X = 1/2 * " << g << " * t^2 "<< endl;
-			cout << "X = "<< (1/2 * g) <<" * "<< pow(t,2) << endl;
-			cout << "X = " << (1/2 * g * pow(t,2)) <<endl;
-			break;
+	switch (opE)
+	{
+	case '1':
+	{	
+		cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
+		cout << "T = "; cin >> t; cout << endl;
+		cout << "VF = "<< g <<"M/s^2" << " * "<<t<<unidadt<< endl;
+		cout << "VF = "<<(g*t)<<"M/s "<<endl;
+	break;
+	}	
+		case '2':
+	{
+		cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
+		cout << "T = "; cin >> t; cout << endl;
+		cout << "H = 1/2 * " << g <<"M/s^2" << " * "<<t <<unidadt<<" ^ 2"<< endl;
+		cout << "H = 4.9M/s^2 * "<< pow(t, 2)<<unidadt<<"^2"<< endl;
+		cout << "H = " << (4.9 * pow(t, 2))<<"M" <<endl;
+	break;
 		}
 	}
 }
