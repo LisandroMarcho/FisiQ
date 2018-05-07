@@ -85,7 +85,7 @@ int mruv(){
 			cout << "a = "; cin >> a;
 			cout << "t = "; cin >> t; cout << endl;
 			
-			cout << "X = " << Xo << unidadX << " + " << vo << unidadv << " * " << t << unidadt << " + 1/2 * " << a << " (" << unidadv << ")/" << unidadt << " * (" << t << unidadt << ")^2" << endl;
+			cout << "X = " << Xo << unidadX << " + " << vo << unidadv << " * " << t << unidadt << " + 1/2 * " << a << "(" << unidadv << ")/" << unidadt << " * (" << t << unidadt << ")^2" << endl;
 			cout << "X = " << Xo << unidadX << " + " << (vo*t) << unidadX << " + " << ( 0.5 * a * pow(t, 2)) << unidadX << endl;
 			cout << "X = " << (Xo + (vo * t) + (0.5 * a * pow(t, 2))) << unidadX;
 			break;
@@ -100,7 +100,7 @@ int mruv(){
 			cout << "a = "; cin >> a;
 			cout << "t = "; cin >> t; cout << endl;
 			
-			cout << "Vf = " << vo << unidadv << " + " << a << " (" << unidadv << ")/" << unidadt << " * " << t << unidadt << endl;
+			cout << "Vf = " << vo << unidadv << " + " << a << "(" << unidadv << ")/" << unidadt << " * " << t << unidadt << endl;
 			cout << "Vf = " << vo << unidadv << " + " << (a * t) << unidadv << endl;
 			cout << "Vf = " << (vo + (a * t)) << unidadv << endl;
 			break;
@@ -135,7 +135,7 @@ int tiroVertical(){
 	
 	system("cls");
 	cout << "Selecciona la ecuación:" << endl;
-	cout << "1. X = Vo * t - 1/2 * g * (t)^2" << endl << "2. Vf = Vo - g * t" << endl;
+	cout << "1. X = Vo * t - 1/2 * g * (t^2)" << endl << "2. Vf = Vo - g * t" << endl;
 	char opE = getch();
 	system("cls");
 	switch (opE){
@@ -149,24 +149,9 @@ int tiroVertical(){
 			cout << "t = "; cin >> t;
 			cout << "g = "; cin >> g; cout << endl;
 			
-			cout << "X = " << Vo << unidadv << " * " << t << unidadt << " - 1/2 * " << g  << " (" << unidadv << ")/" << unidadt << " * (" << t << unidadt << ")^2" << endl;
-			cout << "X = " << (Vo * t) << unidadX << " - " << (0.5 * g * pow(t,2)) << unidadX << endl;
-			cout << "X = " << ((Vo * t)-(0.5*g*pow(t,2))) << unidadX << endl;
-			break;
-		}
-	case '2':
-		{
-			cout << "Unidad de posición: "; cin >> unidadX;
-			cout << "Unidad de velocidad: "; cin >> unidadv;
-			cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
-			
-			cout << "Vo = "; cin >> Vo;
-			cout << "t = "; cin >> t;
-			cout << "g = "; cin >> g; cout << endl;
-			
-			cout << "X = " << Vo << unidadv << " - " << t << unidadt << " - " << g  << " (" << unidadv << ")/" << unidadt << " * " << t << unidadt << endl;
-			cout << "X = " << Vo << unidadv << " - " << (g * t) << unidadv << endl;
-			cout << "X = " << (Vo - (g*t)) << unidadv << endl;
+			cout << "X = " << Vo << unidadv << " * " << t << unidadt << " - 1/2 * " << g  << unidadv << "^2 * (" << t << unidadt << ")^2" << endl;
+			//cout << "a = " << (vf - vo) << unidadv << " / " << (tf - to) << unidadt << endl;
+			//cout << "a = " << ((vf - vo)/(tf - to)) << "(" << unidadv << ")/" << unidadt << endl;
 			break;
 		}
 	}
@@ -177,6 +162,39 @@ int salirEcuacion(){
 	cout << "¿Quieres realizar otra ecuación?" << endl << "Y. Sí, realizar otra ecuación / N. No, salir ";
 	return r;
 }
+int caidaLibre(){
+	string unidadX = ".";
+	string unidadt = ".";
+	
+	float t = 0;
+	float g = -9.8;
+	
+	system("cls");
+	cout << "Selecciona la ecuacion:" << endl;
+	cout << "1. X = g * t" << endl << "2. X= 1/2 * g * (t^2)  " << endl;
+	char opE = getch();
+	system("cls");
+	switch (opE){
+		case '1':
+		{	cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
+			cout << "t = "; cin >> t; cout << endl;
+			cout << "X = "<< g << " * "<<t<< endl;
+			cout << "X = "<<(g*t)<<endl;
+			break;
+		}
+	case '2':
+		{	cout << "Unidad de tiempo: "; cin >> unidadt; cout << endl;
+			cout << "t = "; cin >> t; cout << endl;
+			cout << "X = 1/2 * " << g << " * t^2 "<< endl;
+			cout << "X = "<< (1/2 * g) <<" * "<< pow(t,2) << endl;
+			cout << "X = " << (1/2 * g * pow(t,2)) <<endl;
+			break;
+		}
+	}
+getch();
+}
+
+
 int main(int argc, char *argv[]) {
 	
 	char op = '0';
