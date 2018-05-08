@@ -6,7 +6,6 @@
 #include "lib/mruv.h"
 #include "lib/tiroVertical.h"
 #include "lib/caidaLibre.h"
-
 using namespace std;
 
 int main(int argc, char *argv[]) {
