@@ -37,4 +37,5 @@ int caidaLibre(){
 		break;
 	}
 	}
+	getch();
 }

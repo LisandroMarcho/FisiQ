@@ -8,6 +8,12 @@
 #include "lib/caidaLibre.h"
 using namespace std;
 
+int creditos(){
+	system("cls");
+	cout << "FísiQ [https://github.com/LisandroMarcho/FisiQ]" << endl << endl;
+	cout << "Desarollado por:" << endl << "Lisandro Marchionni [https://github.com/LisandroMarcho]" << endl << "Juan Bravo [https://github.com/F04n]";
+}
+
 int main(int argc, char *argv[]) {
 	
 	int op;
@@ -20,7 +26,7 @@ int main(int argc, char *argv[]) {
 		cout << "### FísiQ ###" << endl;
 		cout << "¿Qué movimiento desea calcular?" << endl << endl;
 		cout << "1. MRU" << endl << "2. MRUV" << endl << "3. Tiro Vertical" << endl << "4. Caida Libre" << endl;
-		cout << endl << "Presiona cualquier tecla para salir";
+		cout << endl << "Pulsa 'Esc' para salir";
 		op = int(getch());
 		
 		switch (op){
@@ -36,8 +42,17 @@ int main(int argc, char *argv[]) {
 		case '4':
 			caidaLibre();
 			break;
-		default:
+		case 'c':
+			creditos();
+			getch();
+			break;
+		case 'C':
+			creditos();
+			getch();
+			break;	
+		case 27:
 			salir = false;
+			break;
 		}
 	}
 	return 0;

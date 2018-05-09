@@ -49,4 +49,5 @@ int tiroVertical(){
 		break;
 	}
 	}
+	getch();
 }
