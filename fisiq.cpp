@@ -6,6 +6,8 @@
 #include "lib/mruv.h"
 #include "lib/tiroVertical.h"
 #include "lib/caidaLibre.h"
+#include "lib/masa.h"
+
 using namespace std;
 
 int creditos(){
@@ -25,7 +27,8 @@ int main(int argc, char *argv[]) {
 		
 		cout << "### FísiQ ###" << endl;
 		cout << "¿Qué movimiento desea calcular?" << endl << endl;
-		cout << "1. MRU" << endl << "2. MRUV" << endl << "3. Tiro Vertical" << endl << "4. Caida Libre" << endl;
+		cout << "1. MRU" << endl << "2. MRUV" << endl << "3. Tiro Vertical" << endl << "4. Caida Libre" << endl << "5. Masa" << endl << "6. Peso" << endl;
+		cout << endl << "Pulsa 'c' para los creditos";
 		cout << endl << "Pulsa 'Esc' para salir";
 		op = int(getch());
 		
@@ -42,6 +45,12 @@ int main(int argc, char *argv[]) {
 		case '4':
 			caidaLibre();
 			break;
+		case '5':
+			masa ();
+			break;
+		//case '6':
+			//peso ();
+			//gbreak;
 		case 'c':
 			creditos();
 			getch();
