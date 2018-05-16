@@ -7,17 +7,17 @@
 #include "lib/tiroVertical.h"
 #include "lib/caidaLibre.h"
 #include "lib/masa.h"
+#include "lib/peso.h"
 
 using namespace std;
 
 int creditos(){
 	system("cls");
 	cout << "FísiQ [https://github.com/LisandroMarcho/FisiQ]" << endl << endl;
-	cout << "Desarollado por:" << endl << "Lisandro Marchionni [https://github.com/LisandroMarcho]" << endl << "Juan Bravo [https://github.com/F04n]";
-}
+	cout << "Desarollado por:" << endl << "Lisandro Marchionni [https://github.com/LisandroMarcho]" << endl << "Juan Bravo [https://github.com/F04n]";}
 
-int main(int argc, char *argv[]) {
-	
+int main(int argc, char *argv[]) 
+{	
 	int op;
 	bool salir = true;
 	
@@ -48,9 +48,9 @@ int main(int argc, char *argv[]) {
 		case '5':
 			masa ();
 			break;
-		//case '6':
-			//peso ();
-			//gbreak;
+		case '6':
+			peso ();
+			break;
 		case 'c':
 			creditos();
 			getch();
@@ -66,3 +66,5 @@ int main(int argc, char *argv[]) {
 	}
 	return 0;
 }
+
+

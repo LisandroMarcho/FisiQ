@@ -8,9 +8,9 @@ int masa ()
 	string unidadm = ".";
 	string unidada = ".";
 	
-	int f = 0;
-	int m = 0;
-	int a = 0;
+	float f = 0;
+	float m = 0;
+	float a = 0;
 	
 	system("cls");
 	cout << "Selecciona la ecuacion:" << endl;
@@ -19,24 +19,38 @@ int masa ()
 	system("cls");
 	switch (opE) 
 	{case '1':
-			{cout << "Unidad de fuerza: "; cin >> unidadf; cout << endl;
+			{cout << "Unidad de fuerza: "; cin >> unidadf; 
+			 cout << "Unidad masa "; cin >> unidadm; 
+			 cout << "Unidad de aceleración: "; cin >> unidada; cout << endl;
+			 
 			 cout << "M = "; cin>> m;
-			 cout << "A = " ; cin>> a;
-			 cout<< "F = " << m << "Kg" << " / " << a << "M/s^2" << endl;
+			 cout << "A = " ; cin>> a; cout << endl; 
+			 
+			 cout<< "F = " << m << unidadm << " / " << a << unidada << endl;
 			 cout<< "F = " << m/a << unidadf << endl;
-			 getch(); break;}
+			 break;}
 	case '2': 
-			{cout << "F = "; cin >> f;
-			 cout << "M = "; cin >> m;
-			 cout << "A = " << f << " Kg*M/s^2 " << " / " << m << "Kg" << endl;
-			 cout << "A = " << f/m << " M/s^2 ";
-			 getch(); break;}
+			{cout << "Unidad de aceleración: "; cin >> unidada; 
+			 cout << "Unidad fuerza "; cin >> unidadf; 
+			 cout << "Unidad de masa: "; cin >> unidadm; cout << endl;
+			
+			 cout << "F = "; cin >> f;
+			 cout << "M = "; cin >> m; cout << endl;
+			 
+			 cout << "A = " << f << unidadf << " / " << m << unidadm << endl;
+			 cout << "A = " << f/m << unidada;
+			 break;}
 	case '3':
-			{cout << "F = "; cin >> f;
-			 cout << "A = "; cin >> a;
-			 cout << "M = " << f << "Kg*M/s^2 " << " / " << a << "M/s^2 " << endl;
-			 cout << "M = " << f/a << "Kg ";
-			 getch(); break;}}	
+			{cout << "Unidad de masa: "; cin >> unidadm;
+			 cout << "Unidad de fuerza: "; cin >> unidadf; 
+			 cout << "Unidad de aceleración: "; cin >> unidada; cout << endl;
+			 
+			 cout << "F = "; cin >> f;
+			 cout << "A = "; cin >> a; cout << endl;
+			 
+			 cout << "M = " << f << unidadf << " / " << a << unidada << endl;
+			 cout << "M = " << f/a << unidadm;
+			 break;}} getch();
 	
 	
 	}
